@@ -87,7 +87,7 @@ class Host(ZabbixBase):
 def main():
     argument_spec = zabbix_utils.zabbix_common_argument_spec()
     argument_spec.update(dict(
-        hostgroup_name=dict(type='list', required=True),
+        hostgroup_name=dict(type='list', elements='str', required=True),
     ))
     module = AnsibleModule(
         argument_spec=argument_spec,
